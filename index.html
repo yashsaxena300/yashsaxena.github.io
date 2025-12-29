@@ -1,5 +1,239 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-  <title>Yay, Yash Saxena's website works!</title>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Me - Professional Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4f46e5", // Soft Indigo (Adjusted for better contrast/relaxing feel)
+                        "primary-soft": "#818cf8",
+                        "accent-orange": "#f97316",
+                        "background-light": "#f8fafc", // Slate 50
+                        "background-dark": "#0f172a", // Slate 900
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
 </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden font-display">
+<div class="w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<header class="flex items-center justify-between h-16 sm:h-20">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Alex.Dev</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#">Resume</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#">Contact</a>
+</nav>
+<button class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary hover:bg-indigo-600 text-white text-sm font-bold transition-all shadow-lg shadow-indigo-500/20">
+                            Hire Me
+                        </button>
+</div>
+<button class="md:hidden text-slate-500 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+</div>
+</div>
+<main class="flex-1">
+<section class="relative py-16 lg:py-24 overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="flex flex-col gap-6">
+<div>
+<h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white mb-6">
+                                        About Me
+                                    </h1>
+</div>
+<div class="prose prose-lg dark:prose-invert">
+<p class="text-2xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-xl font-medium">
+                                        I am a Senior Backend Engineer specializing in high-scale infrastructure and cloud-native architecture.
+                                    </p>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mt-4">
+                                        Currently, I'm scaling data pipelines at TechCorp, ensuring 99.99% uptime for millions of daily users. My passion lies in solving complex distributed system challenges, contributing to open-source projects, and mentoring junior developers to write clean, maintainable code. When I'm not coding, I'm usually hiking or exploring new tech stacks.
+                                    </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 sm:gap-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+<button class="flex items-center gap-3 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-lg hover:translate-y-[-2px] transition-all hover:shadow-xl">
+<span class="material-symbols-outlined text-xl">download</span>
+                                        Download Resume
+                                    </button>
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors group px-4 py-2" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">terminal</span>
+<span class="text-sm font-medium">GitHub</span>
+</a>
+<div class="flex items-center gap-2 text-slate-400 dark:text-slate-500 px-2 select-none">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="text-sm font-medium">San Francisco, CA</span>
+</div>
+</div>
+</div>
+<div class="relative order-1 lg:order-2 flex justify-center lg:justify-end">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-40 dark:opacity-20 pointer-events-none"></div>
+<div class="relative w-full max-w-md aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<div class="w-full h-full bg-cover bg-center grayscale-[20%] hover:grayscale-0 transition-all duration-700" data-alt="Professional portrait of a software engineer in a modern office setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJqCX0Ml1hd_wqkxPav_FEIPXXCvLqOa8aAapob3i7kyImYR2x-7ftAIppsENBVrcNTFT4nBAHgfViSF3vJmTZIXIhjNzTtFo9Ad2hKQNqB1_t_Ez8YSvo6FYFOpg_rrMI_hmSpJIifhfbhbdF81EfXogMX4W982m06o5DinYpZMBeXH1O1ySe-WY6aQPl5gUIQG6LbuIkVBPR5P_rnlczfuLaYItCh1sANwXRH_tGI0j_yqkyWyEf4JPwP1gkSpd8pCNEbEtwUK_F');">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white dark:bg-slate-950">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-4 max-w-2xl">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                                Core Competencies
+                            </h2>
+<p class="text-lg text-slate-600 dark:text-slate-400">
+                                Technical expertise cultivated over a decade of building software, organized by domain.
+                            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+<div class="flex flex-col gap-5 p-6 md:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-primary/20 transition-colors">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+<span class="material-symbols-outlined text-2xl">code</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Languages &amp; Core</h3>
+</div>
+<div class="flex flex-col gap-3">
+<button class="group w-full flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-center justify-center size-8 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">data_object</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1">Python / Go</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">7 Years Exp.</span>
+</div>
+</button>
+<button class="group w-full flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-center justify-center size-8 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">database</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1">Data Engineering</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">5 Years Exp.</span>
+</div>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-5 p-6 md:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-primary/20 transition-colors">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-2xl">cloud_circle</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Infrastructure</h3>
+</div>
+<div class="flex flex-col gap-3">
+<button class="group w-full flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-center justify-center size-8 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">cloud</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1">Cloud (AWS/GCP)</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">6 Years Exp.</span>
+</div>
+</button>
+<button class="group w-full flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-center justify-center size-8 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">deployed_code</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1">Kubernetes</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">4 Years Exp.</span>
+</div>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-5 p-6 md:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-primary/20 transition-colors">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Strategy &amp; Lead</h3>
+</div>
+<div class="flex flex-col gap-3">
+<button class="group w-full flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-center justify-center size-8 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">dns</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1">System Architecture</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">8 Years Exp.</span>
+</div>
+</button>
+<button class="group w-full flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 hover:bg-orange-100 dark:hover:bg-orange-900/40 hover:border-orange-300 dark:hover:border-orange-600 hover:shadow-md transition-all cursor-pointer relative overflow-hidden">
+<div class="absolute right-0 top-0 p-1">
+<div class="size-2 rounded-full bg-accent-orange animate-pulse"></div>
+</div>
+<div class="flex items-center justify-center size-8 rounded-lg bg-accent-orange text-white group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-lg">diversity_3</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1">Leadership</span>
+<span class="text-xs text-accent-orange dark:text-orange-400 font-bold">3 Years Exp.</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<p class="text-slate-500 dark:text-slate-400 text-sm">© 2023 Alex Engineer. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">work</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
