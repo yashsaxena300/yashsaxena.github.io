@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Engineering Portfolio - Project Grid</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922", // Deep charcoal
+                        "surface-dark": "#182430",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-input:focus-within {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(19, 127, 236, 0.5);
+            box-shadow: 0 0 0 2px rgba(19, 127, 236, 0.2);
+        }
+        
+        /* Custom Scrollbar for chips if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white overflow-x-hidden selection:bg-primary selection:text-white relative">
+<!-- Ambient Background Gradients for Glass Effect Depth -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-40"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] opacity-30"></div>
+<div class="absolute top-[40%] left-[30%] w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[100px] opacity-20"></div>
+</div>
+<div class="relative z-10 flex flex-col min-h-screen">
+<main class="flex-grow container mx-auto px-4 py-12 max-w-7xl">
+<!-- Header Section -->
+<div class="flex flex-col items-center justify-center text-center mb-12">
+<span class="text-primary font-medium tracking-wider text-sm uppercase mb-2">Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
+                    Featured Projects
+                </h1>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl text-lg font-light leading-relaxed">
+                    A curated selection of my work in software engineering, embedded systems, and data science. Explore the technical details and live demonstrations below.
+                </p>
+</div>
+<!-- Controls: Search & Filter -->
+<div class="glass-panel rounded-2xl p-2 mb-10 flex flex-col lg:flex-row gap-4 items-center justify-between sticky top-4 z-40 transition-all duration-300">
+<!-- Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto w-full lg:w-auto hide-scrollbar px-2 lg:px-0 pb-2 lg:pb-0">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white px-5 shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95">
+<span class="text-sm font-semibold">All</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 dark:text-slate-300 text-slate-700 px-5 transition-all hover:text-white hover:scale-105 active:scale-95 border border-transparent hover:border-white/10">
+<span class="text-sm font-medium">Software</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 dark:text-slate-300 text-slate-700 px-5 transition-all hover:text-white hover:scale-105 active:scale-95 border border-transparent hover:border-white/10">
+<span class="text-sm font-medium">Hardware</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 dark:text-slate-300 text-slate-700 px-5 transition-all hover:text-white hover:scale-105 active:scale-95 border border-transparent hover:border-white/10">
+<span class="text-sm font-medium">Data Science</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 dark:text-slate-300 text-slate-700 px-5 transition-all hover:text-white hover:scale-105 active:scale-95 border border-transparent hover:border-white/10">
+<span class="text-sm font-medium">Tools</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="w-full lg:w-auto min-w-[300px] px-2 lg:px-0">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full p-2.5 pl-10 text-sm text-slate-900 dark:text-white glass-input rounded-lg placeholder-slate-400 focus:outline-none focus:ring-0 transition-all" placeholder="Search stacks, tags, or names..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+<!-- Card 1 -->
+<div class="glass-panel group rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#101922] to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Data visualization dashboard showing network traffic metrics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBb71U2WzHbH3bI-pOReu69IJFFRGuKaupX-5FNpbJP2RUfi-HBNYSbuH-Qp1a333AGlifWNP2li_0sB7grcSYVsgerFmAe3fgtvRnUn8wPvlWSouilcNeEdXvsVCV6MqA4YMzoI7B3MKlnZR6WD1jEE39kkBmsgBuMt2VtYa--ncwaaEMoWLpCksktY9xGhXJrDsVATMmIYkw-uM-OPsAykb2HGEBQ2DNU61BlPMvUkzawpG-VT0eKTVh3AM6JcripQUWYcRT0zIDf");'>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<div class="flex size-8 items-center justify-center rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10">
+<span class="material-symbols-outlined text-[18px]">dns</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Dist. System Monitor</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                            Real-time microservices latency tracking dashboard designed for high-throughput distributed systems.
+                        </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-6 mt-auto">
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/20 text-blue-200 border border-primary/20">Golang</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">React</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">gRPC</span>
+</div>
+<!-- Actions -->
+<div class="flex gap-3 pt-4 border-t border-white/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-medium text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Code
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-primary hover:bg-blue-600 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Demo
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel group rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#101922] to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="IoT circuit board macro shot with glowing components" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtgY8ESsnens506NXvYhoj-HI1_40KOfJdRWx59vsjzsaq3ByUahrl-DaNcKwjHlyeSScN6rLudmJLAI3jLeE7h6zH_6EKEgrFDSue_6lFgWuIOYum_lpv15-50HfZAK3s99hl3PWe1gZNqX_QnySVc-Wh9K2l_h62pCYUTdp4vMmSjfkhuyZ9Bpeoix8g9Ie5gwtXKxgkZJUdfElMLd-92mODyhwlpe3VKItsai_Bna8zb3JTCHC8i_IEJyyvXSN2Qq5CbAi-sHnH");'>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<div class="flex size-8 items-center justify-center rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">IoT Sensor Mesh</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                            Self-healing mesh network protocol implementation for low-power agricultural sensor arrays.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto">
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/20 text-blue-200 border border-primary/20">C++</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">MQTT</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">ESP32</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-white/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-medium text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Code
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-primary hover:bg-blue-600 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Demo
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel group rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#101922] to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract visualization of neural network nodes and connections" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkOi8gmw0ueU9OeckQ2amyvd_iQ0QcxMGRHpJnTdjW9JHXqCMGYF1aPBfjP72r2b2ABvztOnqXMwUM2Al8U4qTGsa4gM2RAqxirNhcxwSjaXGz8exFwXbWMNpDjAJKdhPK-QLNOFC3RnDuDS2bkAEEifx9S-3g99ekElsjm1JqYcmoDCRatrf-C_BqK1Py21D7M5g1EpToSaDu-FmeSd9CLcdkGr9Zii5o-pIma1mA6zcXcTV7p4vzxmUAQ6y9-2HiNQ83f8hUTZBT");'>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<div class="flex size-8 items-center justify-center rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Neural Net Viz</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                            Interactive 3D visualization tool for inspecting hidden layers in deep learning models during training.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto">
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/20 text-blue-200 border border-primary/20">Python</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">TensorFlow</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">WebGL</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-white/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-medium text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Code
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-primary hover:bg-blue-600 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Demo
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel group rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#101922] to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Digital charts and graphs representing financial trading data" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBn1eqx6zIAuMBki92TAHkJedXjPVHFa9e9MfozMXzc-ZLJNJerb5wBmNwd7ixKP-4Moi2uz4XB0rhrq7wKvVXlTBdXS-TCpCHjcpw7AHm8Kj6kIiCUFHU4cdSOmx3890IqRMucqzkqy5AKaUmE62ESz1vLmAGckyEcOprhUGIzMKJVf37x4tYCyyy9e0M6MeQVLOcHRUppZZEGzObFA3o2jgYQ6tD1ClEfK6muvEmihqI_vtAPq75sFSCVCxEWV5gqihCjM745N55o");'>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<div class="flex size-8 items-center justify-center rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Algo Trading Bot</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                            High-frequency trading algorithm with backtesting engine and automated AWS deployment pipeline.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto">
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/20 text-blue-200 border border-primary/20">Python</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">AWS Lambda</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">Docker</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-white/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-medium text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Code
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-primary hover:bg-blue-600 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Demo
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel group rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#101922] to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Code editor interface on a screen showing html and css" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmDIBbGj4woDB-c76gPAVIEEH--mTgZN90Yz1B1WY9j0nCVJLPXUV2sH-qCFpVyygBiqB3XT0jUTyrHC1CTpx4Co-oHshn4PAH6yS2DKNZD2gx4yNM3huGocA-AAIhPnf6eTYidpv155kMqj_b0KQH6JARuqDFuypiqfmYrxvt02W5skvDML4RrSYlpi7os96gZUiZn-CSgjaxy8f_aPZ_kab2poWoxTn-YdzhgFbgYOGRbDGofwFZalAdkocLhB0HD7eWUxZbe9PF");'>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<div class="flex size-8 items-center justify-center rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10">
+<span class="material-symbols-outlined text-[18px]">web</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Portfolio CMS</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                            A headless CMS built for developer portfolios, featuring markdown support and GitHub integration.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto">
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/20 text-blue-200 border border-primary/20">TypeScript</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">Next.js</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">PostgreSQL</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-white/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-medium text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Code
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-primary hover:bg-blue-600 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Demo
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel group rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#101922] to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract 3D rendering of blockchain blocks and connections" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyVCrkoW5EBHWoDoreyyBliaEozErUyoImDlARIZ1HwdHupueE2DuQ2ca5UG_rgz-CfD-evcBxGpVwQJhGmOR_C5mjw1xy7Ix3hHVVGrpipcbGCAMwI8H7eKgEuEokz0qkmGmXkTBZqJTIvMBSPuuoFJ1YhxloKzdCWvuv9Y1yVMRenzGu4IsoJJwrUTS4u85VLbRFVVX3cLTzUzG3SAA4IFEghb-pVQY-Z20Hu36yCbSG3uCtBlI3G4keTFBQkSG7oWkl9DUKbGcM");'>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<div class="flex size-8 items-center justify-center rounded-full bg-black/50 backdrop-blur-md text-white border border-white/10">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Zero-Knowledge Auth</h3>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                            Authentication service using zk-SNARKs for privacy-preserving identity verification.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto">
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/20 text-blue-200 border border-primary/20">Rust</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">WASM</span>
+<span class="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-slate-300 border border-white/10">Solidity</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-white/10">
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-medium text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                                Code
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 h-9 rounded-lg bg-primary hover:bg-blue-600 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Demo
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center p-8 mt-8">
+<nav class="flex items-center gap-2">
+<a class="flex size-10 items-center justify-center rounded-full glass-panel hover:bg-white/10 text-white transition-all hover:scale-110 active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_left</span>
+</a>
+<a class="flex size-10 items-center justify-center rounded-full bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 transition-all hover:scale-110" href="#">1</a>
+<a class="flex size-10 items-center justify-center rounded-full glass-panel hover:bg-white/10 text-slate-300 hover:text-white text-sm font-medium transition-all hover:scale-110" href="#">2</a>
+<a class="flex size-10 items-center justify-center rounded-full glass-panel hover:bg-white/10 text-slate-300 hover:text-white text-sm font-medium transition-all hover:scale-110" href="#">3</a>
+<span class="flex size-10 items-center justify-center text-slate-500">...</span>
+<a class="flex size-10 items-center justify-center rounded-full glass-panel hover:bg-white/10 text-white transition-all hover:scale-110 active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span>
+</a>
+</nav>
+</div>
+</main>
+</div>
+</body></html>
