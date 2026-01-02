@@ -1,1 +1,172 @@
+<!DOCTYPE html>
 
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Card Template</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922", // Deep dark blue-grey
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "3xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for the gallery */
+        .gallery-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        .gallery-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(28, 33, 39, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-highlight {
+            background: linear-gradient(135deg, rgba(19, 127, 236, 0.15) 0%, rgba(19, 127, 236, 0.05) 100%);
+            border: 1px solid rgba(19, 127, 236, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex items-center justify-center p-4 md:p-8 relative selection:bg-primary/30 selection:text-white">
+<!-- Abstract Background Elements to show off Glassmorphism -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+<div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-40 mix-blend-screen"></div>
+<div class="absolute bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] opacity-30 mix-blend-screen"></div>
+<div class="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[90px] opacity-30 mix-blend-screen"></div>
+</div>
+<!-- Main Project Card -->
+<main class="w-full max-w-[900px] glass-panel rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_-10px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in duration-500">
+<div class="p-6 md:p-10 flex flex-col gap-6">
+<!-- 1. Header Section -->
+<header class="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-white/5 pb-6">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3 flex-wrap">
+<h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Quantitative Researcher</h1>
+<a class="group flex items-center justify-center w-8 h-8 rounded-full bg-white/5 hover:bg-primary text-white transition-colors duration-300" href="#" title="View Project">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+<div class="flex items-center gap-2 text-[#9dabb9]">
+<span class="material-symbols-outlined text-[18px] text-primary">domain</span>
+<span class="text-base font-medium">Stealth Startup</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start bg-white/5 px-4 py-2 rounded-xl border border-white/5">
+<span class="material-symbols-outlined text-[18px] text-[#9dabb9]">calendar_month</span>
+<span class="text-sm font-semibold text-white whitespace-nowrap">Dec 2023 - Present</span>
+</div>
+</header>
+<!-- 2. Skill Tags Row -->
+<section class="flex flex-wrap gap-2">
+<div class="flex items-center px-3 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-200 text-xs font-semibold tracking-wide uppercase transition-colors hover:bg-yellow-500/20 cursor-default">
+                    Stochastic Calculus
+                </div>
+<div class="flex items-center px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-200 text-xs font-semibold tracking-wide uppercase transition-colors hover:bg-purple-500/20 cursor-default">
+                    Brownian Motion Analysis
+                </div>
+<div class="flex items-center px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-200 text-xs font-semibold tracking-wide uppercase transition-colors hover:bg-emerald-500/20 cursor-default">
+                    Statistics
+                </div>
+<div class="flex items-center px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-200 text-xs font-semibold tracking-wide uppercase transition-colors hover:bg-orange-500/20 cursor-default">
+                    Python
+                </div>
+<div class="flex items-center px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-semibold tracking-wide uppercase transition-colors hover:bg-white/10 cursor-default">
+                    Derivatives Trading
+                </div>
+</section>
+<!-- 4. Tech Stack Sub-line -->
+<section class="flex flex-col sm:flex-row sm:items-center gap-3 py-2 border-b border-white/5 pb-6">
+<span class="text-[#9dabb9] text-sm font-semibold uppercase tracking-wider min-w-fit">Tech Stack</span>
+<div class="hidden sm:block w-px h-4 bg-white/10"></div>
+<p class="text-white text-sm font-normal font-mono opacity-90 truncate">
+                    Python, QuantConnect
+                </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
+<!-- 5. Body Description -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                        Project Overview
+                    </h3>
+<p class="text-gray-300 text-base leading-relaxed font-light">
+                        Led development of high risk protection options trading algorithm using a combination of Crank-Nicolson's Finite Difference solution path, Cox-Ross-Rubinstein Binomial Tree solution path, & Barone-Adesi Whaley solution path to develop a robust decision-making engine to sell or exercise option contracts to optimize for profitability. I created a way to provide a solution to solve for likely payoff to help with training predictive neural networks in the future to optimize algorithm's weights balancing riskiness & profitability.
+                        <br/><br/>
+                        Full documentation of version 1 is attached. Although theoretically sound, behavior was extremely risk-averse, so much so that I deem it practically useless given volatility and behavior of today's market not following traditional random motion as described by Brownian motion theory & Stochastic methodologies. 
+                    </p>
+</div>
+<!-- 6. Results/Impact Box -->
+<div class="flex flex-col justify-center glass-highlight rounded-xl p-6 relative overflow-hidden group">
+<!-- Background Icon Decoration -->
+<span class="material-symbols-outlined absolute top-[-10px] right-[-10px] text-[100px] text-primary opacity-5 transform rotate-12 group-hover:rotate-6 transition-transform duration-500 select-none pointer-events-none">
+                        trending_up
+                    </span>
+<h3 class="text-white text-base font-semibold mb-3 flex items-center gap-2 relative z-10">
+<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        Key Impact
+                    </h3>
+<div class="relative z-10 flex flex-col gap-1">
+<span class="text-1xl font-bold text-white tracking-tight">
+        <ul>
+                <li>Developed theoretically sound & risk protected option trading algorithm</li>
+        </ul>
+</span>
+</div>
+</div>
+<!-- 7. Gallery Strip -->
+<section class="flex flex-col gap-3 pt-4">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-semibold text-[#9dabb9] uppercase tracking-wider">Project Gallery</h3>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[18px] text-gray-500">drag_handle</span>
+</div>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="gallery-scroll flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+<!-- Item 4: Doc Placeholder -->
+<div class="snap-start shrink-0 w-[200px] aspect-[4/3] rounded-xl overflow-hidden border border-white/10 bg-white/5 relative group cursor-pointer hover:bg-white/10 transition-colors flex flex-col items-center justify-center gap-2" href="../document_gallery/American_Option_Consensus_Engine.pdf">
+<span class="material-symbols-outlined text-3xl text-primary">description</span>
+<span class="text-xs font-medium text-gray-300">Read Algorithm V1 Documentation</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>
