@@ -61,7 +61,33 @@ title: Yash Saxena's Website
 <nav class="flex gap-6">
 <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="document_gallery/Yash Saxena's Technical Resume.pdf">Resume</a>
 <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="projects.html">Projects</a>
-<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#">Contact</a>
+<!--<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#">Contact</a>-->
+<!-- Mobile Menu Button (Visible on small screens) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector("button.lg\\:hidden");
+    const menu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+});
+</script>
+<button class="lg:hidden flex items-center justify-center size-9 rounded-lg hover:bg-white/10 text-white transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div id="mobile-menu" class="lg:hidden flex-col gap-1 glass-panel rounded-xl p-3 relative z-50 sticky top-[96px]">
+        <ul>
+    <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="document_gallery/Yash Saxena's Technical Resume.pdf">Resume</a>
+                <br>
+    <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="projects.html">Projects</a>
+                <!--<br>
+    <a class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="project_lists/miscellaneous.html">Contact</a>-->
+                </ul>
+</div>
 </nav>
 </div>
 <button class="md:hidden text-slate-500 dark:text-slate-300">
