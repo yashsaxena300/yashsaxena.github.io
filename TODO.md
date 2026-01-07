@@ -18,7 +18,7 @@ Create project mini cards w/ redirects
 
 Add project mini cards on projects.html
 
-Update profile pic with higher quality image
+Update profile pic with higher quality image (remove image_gallery)
 
 Fix css consistency across index.html & projects.html
 
